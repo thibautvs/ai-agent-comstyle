@@ -1,0 +1,98 @@
+{
+  "extends": ["airbnb", "prettier", "plugin:storybook/recommended"],
+  "plugins": ["formatjs"],
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "globals": {
+    "document": true
+  },
+  "rules": {
+    // forbid semicolons
+    "semi": [2, "never"],
+    // add exceptions when checking imports paths
+    "import/no-unresolved": [
+      2,
+      { "ignore": ["config", "utils", "toolbox", "messages", "icons"] }
+    ],
+    // add exceptions when checking import file extensions
+    "import/extensions": [
+      2,
+      { ".js": "never", ".jsx": "never", "svg": "always" }
+    ],
+    // validate "to" on <Link> tags instead of "href" on <a> tags
+    "jsx-a11y/anchor-is-valid": [
+      2,
+      {
+        "components": ["Link"],
+        "specialLink": ["to"]
+      }
+    ],
+    // add exceptions for props validation
+    "react/prop-types": [
+      2,
+      {
+        "ignore": ["children"]
+      }
+    ],
+    // closing bracket doesn't have to be aligned with opening one (allow inline brackets)
+    "react/jsx-closing-bracket-location": [0],
+    // no need of a trailing comma on the last line
+    "comma-dangle": [0],
+    // functions returning values don't need a useless default return
+    "consistent-return": [0],
+    // switch statements don't need a default case
+    "default-case": [0],
+    // no space needed after { or before }
+    "object-curly-spacing": [0],
+    // disable code style rules for arrow bodies
+    "arrow-body-style": [0],
+    // set lines max length to 140 chars
+    "max-len": [
+      2,
+      140,
+      2,
+      {
+        "ignoreUrls": true,
+        "ignoreComments": false
+      }
+    ],
+    // allow autobinding syntax
+    "react/jsx-no-bind": [
+      2,
+      { "allowBind": true, "ignoreDOMComponents": true }
+    ],
+    // for nesting <input /> into <label> as valid
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "labelComponents": ["CustomInputLabel"],
+        "labelAttributes": ["label"],
+        "controlComponents": ["CustomInput"],
+        "depth": 3
+      }
+    ],
+    // allow map index in React elements keys
+    "react/no-array-index-key": [0],
+    // allow PropTypes.array + PropTypes.object
+    "react/forbid-prop-types": [0],
+    // allow ++ operator
+    "no-plusplus": [0],
+    // allow props spreading
+    "react/jsx-props-no-spreading": [0],
+    // prevents specifying offset in plural rules in messages (some translation vendors don't allow it)
+    "formatjs/no-offset": "error",
+    // enforces default message in translations
+    "formatjs/enforce-default-message": ["error", "literal"],
+    // enforces translations description to always be present
+    "formatjs/enforce-description": ["error", "literal"],
+    // enforces that all values are passed if message has placeholders
+    "formatjs/enforce-placeholders": ["error"],
+    // allows components to be defined as an arrow function
+    "react/function-component-definition": [0],
+    // allows to pass props constructed as an object rather than forcing useMemo every time
+    "react/jsx-no-constructed-context-values": [0]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "config/*": ["./config/*"],
+      "utils/*": ["./src/utils/*"],
+      "toolbox": ["./src/components/toolbox"],
+      "messages": ["./src/components/foundation/Intl/messages"],
+      "icons/*": ["./public/icons/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

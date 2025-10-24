@@ -1,0 +1,34 @@
+{
+  "presets": [
+    "@babel/preset-react",
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": [">0.2%", "not dead", "not op_mini all"]
+        }
+      }
+    ]
+  ],
+  "env": {
+    "development": {
+      "compact": false
+    },
+    "jest": {
+      "presets": ["@babel/preset-env", "@babel/preset-react"]
+    }
+  },
+  "plugins": [
+    "react-refresh/babel",
+    "@babel/plugin-proposal-export-default-from",
+    "babel-plugin-styled-components",
+    [
+      "formatjs",
+      {
+        "idInterpolationPattern": "[sha512:contenthash:base64:6]",
+        "ast": true
+      }
+    ]
+  ]
+}

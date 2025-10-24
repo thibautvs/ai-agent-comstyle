@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# deploy package
+dist/
+
+# storybook deploy package
+storybook-static/
+
+# testing coverage report
+coverage/
+
+# local env settings
+.env
+
+# log files
+*.log
+
+# macOS folder settings files
+.DS_Store
+*storybook.log
